@@ -25,9 +25,9 @@ const Chat: React.FC<ChatProps> = ({ token, userId }) => {
 
   useEffect(() => {
     if (token) {
-      const socketIo = io('http://localhost:3000', {
+      const socketIo = io('https://socket-tb.onrender.com', {
         auth: { token },
-      });
+      }); //TOken based connection
 
       socketIo.on('connect', () => {
         console.log('Connected to socket server');
